@@ -13,6 +13,7 @@ namespace ByteBank.SistemaAgencia
         static void Main(string[] args)
         {
             ListaDeContasCorrentes lista = new ListaDeContasCorrentes();
+            ContaCorrente contaRemocao = new ContaCorrente(555, 5555555);
 
             lista.Adicionar(new ContaCorrente(123, 123567));
             lista.Adicionar(new ContaCorrente(123, 123567));
@@ -20,6 +21,12 @@ namespace ByteBank.SistemaAgencia
             lista.Adicionar(new ContaCorrente(123, 123567));
             lista.Adicionar(new ContaCorrente(123, 123567));
             lista.Adicionar(new ContaCorrente(123, 123567));
+            lista.Adicionar(contaRemocao);
+
+            lista.Exibir();
+            Console.WriteLine("-----------------------------");
+            lista.Remover(contaRemocao);
+            lista.Exibir();
 
             Console.WriteLine("A execução do programa foi finalizada, tecle enter para finalizar ...");
             Console.ReadLine();

@@ -44,5 +44,38 @@ namespace ByteBank.SistemaAgencia
 
             _itens = novoArray;
         }
+
+        public void Remover(ContaCorrente contaCorrente)
+        {
+            int indiceItem = -1;
+
+            for (int i = 0; i < _proximaPosicao; i++)
+            {
+                ContaCorrente itemAtual = _itens[i];
+
+                if (itemAtual.Equals(contaCorrente))
+                {
+                    indiceItem = i;
+                    break;
+                }
+            }
+
+            for (int i = indiceItem; i < (_proximaPosicao - 1); i++)
+            {
+                _itens[i] = _itens[i + 1];
+            }
+
+            _proximaPosicao--;
+            _itens[_proximaPosicao] = null;
+        }
+
+        public void Exibir()
+        {
+            for (int i = 0; i < _proximaPosicao; i++)
+            {
+                ContaCorrente item = _itens[i];
+                Console.WriteLine($"Conta no índice {i}: número {item.Numero} | agência: {item.Agencia}");
+            }
+        }
     }
 }
