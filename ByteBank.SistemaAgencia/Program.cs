@@ -12,6 +12,28 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
+            TestaListaContas();
+
+            Console.WriteLine("A execução do programa foi finalizada, tecle enter para finalizar ...");
+            Console.ReadLine();
+        }
+
+        private static void TestaListaContas()
+        {
+            ListaDeContasCorrentes lista = new ListaDeContasCorrentes();
+            ContaCorrente[] contas = new ContaCorrente[]
+            {
+                new ContaCorrente(100, 123567),
+                new ContaCorrente(101, 355677),
+                new ContaCorrente(102, 687949),
+            };
+
+            lista.AdicionarVarios(contas);
+            lista.Exibir();
+        }
+
+        private static void TestaLista()
+        {
             ListaDeContasCorrentes lista = new ListaDeContasCorrentes();
             ContaCorrente contaRemocao = new ContaCorrente(555, 5555555);
 
@@ -27,9 +49,6 @@ namespace ByteBank.SistemaAgencia
             Console.WriteLine("-----------------------------");
             lista.Remover(contaRemocao);
             lista.Exibir();
-
-            Console.WriteLine("A execução do programa foi finalizada, tecle enter para finalizar ...");
-            Console.ReadLine();
         }
 
         private static void TestarArray()
