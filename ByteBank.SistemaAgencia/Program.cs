@@ -12,10 +12,22 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            TestaListaContas();
+            TestaListaGenerica();
 
             Console.WriteLine("A execução do programa foi finalizada, tecle enter para finalizar ...");
             Console.ReadLine();
+        }
+
+        private static void TestaListaGenerica()
+        {
+            Lista<int> lista = new Lista<int>();
+
+            lista.Adicionar(5);
+            lista.Adicionar(6);
+            lista.Adicionar(7);
+            lista.Adicionar(8);
+
+            lista.Exibir();
         }
 
         private static void TestaListaContas()
