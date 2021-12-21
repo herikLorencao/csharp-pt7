@@ -12,6 +12,21 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
+            ListaDeContasCorrentes lista = new ListaDeContasCorrentes();
+
+            lista.Adicionar(new ContaCorrente(123, 123567));
+            lista.Adicionar(new ContaCorrente(123, 123567));
+            lista.Adicionar(new ContaCorrente(123, 123567));
+            lista.Adicionar(new ContaCorrente(123, 123567));
+            lista.Adicionar(new ContaCorrente(123, 123567));
+            lista.Adicionar(new ContaCorrente(123, 123567));
+
+            Console.WriteLine("A execução do programa foi finalizada, tecle enter para finalizar ...");
+            Console.ReadLine();
+        }
+
+        private static void TestarArray()
+        {
             int[] idades = new int[]
             {
                 10,
@@ -32,7 +47,6 @@ namespace ByteBank.SistemaAgencia
 
             int media = acumulador / idades.Length;
             Console.WriteLine($"A média das idades é {media} anos");
-            Console.ReadLine();
         }
     }
 }
